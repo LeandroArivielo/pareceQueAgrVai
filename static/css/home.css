@@ -1,0 +1,22 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.separador30linhas{
+    height: 30px;
+}
+.separador15linhas{
+    height: 15px;
+}
+.cinza {
+    background-color: #f7f7f7;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.show{
+    color: rgb(49, 49, 49);
+    background-color: #4ABDAC;
+}
