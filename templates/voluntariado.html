@@ -53,7 +53,7 @@
                 <div class="mx-5 px-5">
                     <ul class="nav nav-fill">
                         <li class="my-auto nav-item">
-                            <a href="/templates/trabalho.html">
+                            <a href="{% url 'trabalho' %}">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
                                     viewBox="0 0 172 172" style=" fill:#000000;">
                                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
@@ -74,7 +74,7 @@
                             <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="true" aria-expanded="false">ONGs por tipo</a>
                             <div class="dropdown-menu">
-                                <a class="text-info dropdown-item" href="{% url 'ongsdeanimais' %}">ONGs de
+                                <a class="text-info dropdown-item" href="{% url 'ONGsDeAnimais' %}">ONGs de
                                     Animais</a>
                                 <a class="text-info dropdown-item" href="#">ONGs de Apoio a mulheres</a>
                                 <a class="text-info dropdown-item" href="#">ONGs de Crianças</a>
@@ -86,7 +86,7 @@
                             <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="true" aria-expanded="false">Voluntariado</a>
                             <div class="dropdown-menu">
-                                <a class="text-info dropdown-item" href="{% url 'voluntariado' %}">ONGs para
+                                <a class="text-info dropdown-item" href="{% url 'Voluntariado' %}">ONGs para
                                     Trabalho Voluntário</a>
                                 <a class="text-info dropdown-item" href="#">ONGs para Voluntariado Empresarial</a>
                                 <a class="text-info dropdown-item" href="#">Grupos de Voluntários</a>
@@ -97,7 +97,7 @@
                             <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="true" aria-expanded="false">Eventos</a>
                             <div class="dropdown-menu">
-                                <a class="text-info dropdown-item" href="{% url 'eventos' %}">Lista de
+                                <a class="text-info dropdown-item" href="{% url 'ListadeEventos' %}">Lista de
                                     Eventos</a>
                                 <a class="text-info dropdown-item" href="#">Inclua um Eventos</a>
                             </div>
@@ -106,7 +106,7 @@
                             <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="true" aria-expanded="false">Aprenda</a>
                             <div class="dropdown-menu">
-                                <a class="text-info dropdown-item" href="{% url 'oqe' %}">O que é uma ONG</a>
+                                <a class="text-info dropdown-item" href="{% url 'oqE' %}">O que é uma ONG</a>
                                 <a class="text-info dropdown-item" href="#">Como criar uma ONG</a>
                             </div>
                         </li>
