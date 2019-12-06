@@ -1,0 +1,511 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ONGs Seach</title>
+</head>
+
+<body class="show">
+    <header class="show">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="show p-4">
+                    <h5 class="text-white h4">Pesquisa rápida</h5>
+                    <span class="text-white">Encontre a ONG desejada mais rápidamente.</span>
+                </div>
+                <div class="">
+                    <form class="show">
+                        <div class="ml-3 form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInput">Cidade</label>
+                                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Cidade">
+                            </div>
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">ONG</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="ONG">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-2">Filtrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark show">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Alterna navegação">
+                    <span class=""> <img src="https://img.icons8.com/color/32/000000/search.png"> </span>
+                </button>
+            </nav>
+        </div>
+        <nav class="flex-fill justify-content-center navbar navbar-expand-lg navbar-dark show">
+            <div class="mx-5 px-5">
+                <div class="mx-5 px-5">
+                    <ul class="nav nav-fill">
+                        <li class="my-auto nav-item">
+                            <a href="{% url 'trabalho' %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M86,13.94141l-3.86328,3.69531l-69.875,69.875l7.72656,7.72656l6.88672,-6.88672v62.14844h48.375v-53.75h21.5v53.75h48.375v-62.14844l6.88672,6.88672l7.72656,-7.72656l-69.875,-69.875zM86,29.22656l48.375,48.375v62.14844h-26.875v-53.75h-43v53.75h-26.875v-62.14844z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mx-5  nav-item dropdown">
+                            <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">ONGs por tipo</a>
+                            <div class="dropdown-menu">
+                                <a class="text-info dropdown-item" href="{% url 'ONGsDeAnimais' %}">ONGs de
+                                    Animais</a>
+                                <a class="text-info dropdown-item" href="#">ONGs de Apoio a mulheres</a>
+                                <a class="text-info dropdown-item" href="#">ONGs de Crianças</a>
+                                <a class="text-info dropdown-item" href="#">ONGs de Dependentes Químicos</a>
+                                <a class="text-info dropdown-item" href="#">ONGs De Educação</a>
+                            </div>
+                        </li>
+                        <li class="mx-5 nav-item dropdown">
+                            <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Voluntariado</a>
+                            <div class="dropdown-menu">
+                                <a class="text-info dropdown-item" href="{% url 'Voluntariado' %}">ONGs para
+                                    Trabalho Voluntário</a>
+                                <a class="text-info dropdown-item" href="#">ONGs para Voluntariado Empresarial</a>
+                                <a class="text-info dropdown-item" href="#">Grupos de Voluntários</a>
+                                <a class="text-info dropdown-item" href="#">Maiores ONGs do Piauí</a>
+                            </div>
+                        </li>
+                        <li class="mx-5  nav-item dropdown">
+                            <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Eventos</a>
+                            <div class="dropdown-menu">
+                                <a class="text-info dropdown-item" href="{% url 'ListadeEventos' %}">Lista de
+                                    Eventos</a>
+                                <a class="text-info dropdown-item" href="#">Inclua um Eventos</a>
+                            </div>
+                        </li>
+                        <li class="mx-5  nav-item dropdown">
+                            <a class="text-white nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Aprenda</a>
+                            <div class="dropdown-menu">
+                                <a class="text-info dropdown-item" href="{% url 'oqE' %}">O que é uma ONG</a>
+                                <a class="text-info dropdown-item" href="#">Como criar uma ONG</a>
+                            </div>
+                        </li>
+                        <li class="ml-5 my-auto nav-item">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#ffffff">
+                                            <path
+                                                d="M148.73633,23.26367l-137.01001,49.82373l5.97339,5.96289l81.21289,81.22339zM130.76367,41.23633l-36.17627,99.50049l-27.86182,-27.86182l39.19971,-39.19971l-7.60058,-7.60058l-39.19971,39.19971l-27.86182,-27.86182z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="show" role="main">
+        <section class="bg-white jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Lista de ONGs</h1>
+                <p class="lead text-black"><b>ONGs disponíveis para trabalho voluntário ou doações</b></p>
+            </div>
+        </section>
+        <div class="bg-white album cinza">
+            <div class="bg-white d-flex justify-content-center">
+                <h1 class="my-3 text-center">Veja como ajudar!</h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="show card mb-4 shadow-sm">
+                            <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" src="static/imagens/ajude-com-doacoes.jpg"
+                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <h5>
+                                    <span class="font-weight-bold h4">Ajude uma organização social com doações</span>
+                                </h5>
+                                <p>Veja aqui a lista de organizações sociais, e depoimentos de quem já fez doações.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-info">Ver lista de ONGs para
+                                        doações</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" src="static/imagens/faca-trabalho-voluntario.jpg"
+                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <h5>
+                                    <span class="font-weight-bold h4">Faça trabalho voluntário em ONGs</span>
+                                </h5>
+                                <p>Veja aqui a lista de organizações sociais, e depoimentos de quem já fez trabalho
+                                    voluntário.</p>
+                                <div class="flex-column d-flex justify-content-around align-items-center">
+                                    <div class="">
+                                        <button type="button" class="btn btn-info btn-sm">Ver lista de ONGs para
+                                            voluntariado empresarial</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" src="static/imagens/ajude-divulgar-ong.jpg"
+                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <h5>
+                                    <span class="font-weight-bold h4">Ajude a divulgar uma organização social</span>
+                                </h5>
+                                <p>Veja aqui a lista de organizações sociais de seu município, e ajude a divulgar o
+                                    trabalho da organização.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-info">Ver lista de ONGs para
+                                        divulgar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" src="static/imagens/se-envolva-em-causa.jpg"
+                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <h5>
+                                    <span class="font-weight-bold h4">Se envolva em uma causa social de seu
+                                        interesse</span>
+                                </h5>
+                                <p>Ajude organizações que trabalham em prol de causas em que você acredita.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-info">Ver lista de ONGs por tipo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" src="static/imagens/faca-voluntariado-empresarial.jpg"
+                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <h5>
+                                    <span class="font-weight-bold h4">Crie projetos de voluntariado empresarial</span>
+                                </h5>
+                                <p>Envolva os funcionários de sua empresa em projetos que apoiam organizações sociais de
+                                    seu município.</p>
+                                <div class="">
+                                    <button type="button" class="btn btn-info btn-sm">Ver lista de ONGs para
+                                        voluntariado empresarial</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" src="static/imagens/sugira-uma-organizacao.jpg"
+                                data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <p class="card-text"></p>
+                                <h5>
+                                    <span class="font-weight-bold h4">Sugira uma organização social para nosso
+                                        cadastro</span>
+                                </h5>
+                                <p>Ajude a completar nosso cadastro das organizações sociais de seu município.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-info">Sugira uma ONG para cadastro</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="separador30linhas"></div>
+            <div class="px-5 mx-5 row mb-2">
+                <div class="col-md-6">
+                    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <strong class="d-inline-block mb-2 p-3 bg-info text-white">Blog da ONGs Brasil</strong>
+                            <h3 class="mb-0">
+                                <a class="text-dark" href="#">5 formas de ajudar ONGs de animais</a>
+                            </h3>
+                            <div class="mb-1 text-muted">12 de Nov</div>
+                            <p class="card-text mb-auto">Já pensou em ajudar uma ONG que trabalhe com animais? Se você
+                                gostaria de colaborar com ongs de animais, mas não sabe como, veja mais...</p>
+                            <a href="#">Continue lendo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <strong class="d-inline-block mb-2 p-3 bg-info text-white">Notícias</strong>
+                            <h3 class="mb-0">
+                                <a class="text-dark" href="#">Nova Edição do Cozinha Anexa Beneficia Fundação Pão dos
+                                    Pobres</a>
+                            </h3>
+                            <div class="mb-1 text-muted">11 de Nov</div>
+                            <p class="card-text mb-auto">Na próxima terça-feira (9) acontece mais uma edição da Cozinha
+                                Anexa no Complex Skatepark. Veja mais...</p>
+                            <a href="#">Continue lendo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separador30linhas"></div>
+        <div class="row bg-info">
+            <div class="cinza col-md-4 col-sm-4 col-xs-12 text-center">
+                <div class="separador30linhas"></div>
+                <img src="static/imagens/instituto-vidas-raras.jpg" width="300">
+                <div class="separador30linhas"></div>
+            </div>
+            <div class="cinza col-md-1 col-sm-1 hidden-xs text-center">
+
+            </div>
+            <div class="cinza col-md-7 col-sm-7 col-xs-12">
+                <div class="separador30linhas"></div>
+                <p class="h3">ONG DO DIA</p>
+                <p class="h1">Instituto Vidas Raras</p>
+                <p>A missão do instituto é dar acesso a diagnóstico e tratamento, divulgar as patologias raras, criar
+                    condições de tratamento e ambientes para acolher pacientes. </p>
+                <div class="separador30linhas"></div>
+                <a
+                    href="default.asp?Pag=2&amp;Destino=InstituicoesTemplate&amp;CodigoInstituicao=21346&amp;Instituicao=Instituto-Vidas-Raras"><button
+                        type="submit" class="btn btn-lg btn-info " value="Filtrar" name="Btn"
+                        style="white-space: normal; "><b>CONHEÇA :)</b></button></a>
+                <div class="separador30linhas"></div>
+            </div>
+
+        </div>
+        <div class="separador30linhas"></div>
+        <div class="cinza d-flex justify-content-center">
+            <div class="ml-5 pl-5">
+                <div class="separador30linhas"></div>
+                <h2 class="h1">Calendário de Causas</h2>
+                <div class="separador15linhas"></div>
+                <p>Quer apoiar uma causa? Escolha uma data! Cadastramos diversas datas que divulgam e apoiam causas
+                    ligadas a infância, saúde, animais, meio-ambiente, entre outras.</p>
+                <div class="separador15linhas"></div>
+                <a href="default.asp?Pag=62"><button type="button" class="btn btn-lg btn-info"
+                        style="white-space: normal;">CALENDÁRIO DE CAUSAS</button></a>
+                <div class="separador30linhas"></div>
+
+            </div>
+            <div class="mx-5 px-5">
+                <div class="separador30linhas"></div>
+                <img src="static/imagens/divulgue-uma-causa.jpg" class="img-fluid" alt="Calendário de Causas">
+                <div class="separador30linhas"></div>
+            </div>
+        </div>
+        <div class="separador30linhas"></div>
+        <div class="row bg-info">
+            <div class="cinza col-md-1 col-sm-1 hidden-xs ">
+            </div>
+            <div class="cinza col-md-5 col-sm-5 col-xs-12 ">
+
+                <div class="separador30linhas"></div>
+                <h2 class="h3" style="margin-bottom:-15px;"><b>25 de NOVEMBRO</b></h2>
+                <div class="separador30linhas"></div>
+                <h2 class="h1">Dia Internacional para a Eliminação da Violência contra a Mulher</h2>
+                <div class="separador15linhas"></div>
+                <p></p>
+                <div class="separador15linhas"></div>
+                <a
+                    href="default.asp?Pag=60&amp;CodigoData=73&amp;Data=Dia-Internacional-para-a-Eliminacao-da-Violencia-contra-a-Mulher"><button
+                        type="button" class="btn btn-lg btn-info" style="white-space: normal;">CONHEÇA ESTA
+                        DATA</button></a><br><br><a href="default.asp?Pag=59&amp;Mes=11"><button type="button"
+                        class="btn btn-lg btn-info" style="white-space: normal;">VEJA AS CAUSAS DE
+                        NOVEMBRO</button></a>
+                <div class="separador30linhas"></div>
+                <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+                    <div class="separador15linhas"></div>
+                    <div class="separador15linhas"></div>
+                </div>
+
+            </div>
+            <div class="cinza col-md-1 col-sm-1 hidden-xs ">
+            </div>
+            <div class="cinza col-md-4 col-sm-4 col-xs-12 ">
+                <div class="separador30linhas"></div>
+                <p class="h2">Outras Datas</p>
+                <div class="separador15linhas"></div>
+                <table class="table table-striped">
+
+                    <tbody>
+                        <tr>
+                            <td><a
+                                    href="default.asp?Pag=60&amp;CodigoData=123&amp;Data=Dia-Internacional-do-Orgulho-Gay">
+                                    <h3 class="text-dark h5">28 de Junho - Dia Internacional do Orgulho Gay</h3>
+                                </a></td>
+                        </tr>
+
+
+                        <tr>
+                            <td><a href="default.asp?Pag=60&amp;CodigoData=99&amp;Data=Dia-Mundial-da-Artrite">
+                                    <h3 class="text-dark h5">12 de Outubro - Dia Mundial da Artrite</h3>
+                                </a></td>
+                        </tr>
+
+
+                        <tr>
+                            <td><a
+                                    href="default.asp?Pag=60&amp;CodigoData=107&amp;Data=Dia-Nacional-da-Educacao-Infantil">
+                                    <h3 class="text-dark h5">25 de Agosto - Dia Nacional da Educação Infantil</h3>
+                                </a></td>
+                        </tr>
+
+
+                        <tr>
+                            <td><a
+                                    href="default.asp?Pag=60&amp;CodigoData=36&amp;Data=Dia-Internacional-das-Criancas-Inocentes-Vitimas-de-Agressao">
+                                    <h3 class="text-dark h5">4 de Junho - Dia Internacional das Crianças Inocentes
+                                        Vítimas de
+                                        Agressão</h3>
+                                </a></td>
+                        </tr>
+
+
+                        <tr>
+                            <td><a href="default.asp?Pag=60&amp;CodigoData=113&amp;Data=Dia-Mundial-da-Reciclagem">
+                                    <h3 class="text-dark h5">17 de Maio - Dia Mundial da Reciclagem</h3>
+                                </a></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="separador30linhas"></div>
+            <div class="cinza col-md-1 col-sm-1 hidden-xs ">
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div class="row" style="padding-top:8px;padding-bottom:10px;height:50px;">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="https://www.facebook.com/ongsbrasileiras/" target="_blank"><img
+                            src="https://img.icons8.com/ios/50/000000/facebook.png" height="40" width="40"></a>
+                    <a href="http://www.twitter.com/ongsbrasil" target="_blank"><img
+                         src="https://img.icons8.com/ios/50/000000/twitter-squared.png" width="40" height="40"></a>
+                    <a href="https://www.instagram.com/ongsbrasil/" target="_blank"><img
+                         src="https://img.icons8.com/ios/50/000000/instagram.png" width="40" height="40"></a>
+                    <a href="/blog/" target="_blank"><img src="https://img.icons8.com/ios/50/000000/blogger.png" width="40" height="40"></a>
+                </div>
+
+
+            </div>
+
+            <div class="bg-dark row" style="padding-top:40px;padding-bottom:40px;">
+                <div class="d-flex justify-content-center container">
+
+                    <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+                        <div class="separador15linhas"></div>
+                        <div class="separador15linhas"></div>
+                    </div>
+
+                    <div class="pt-5 col-md-4 col-sm-4 col-xs-12 text-left" style="line-height:80%">
+                        <p style="color:#16A2B8; font-size:16px;"><b>ONGs Seach</b></p>
+                        <a href="default.asp?Pag=16">
+                            <p class="text-success textorodape"><span class="glyphicon glyphicon-user"
+                                    aria-hidden="true"></span>
+                                Quem Somos</p>
+                        </a>
+                        <a href="default.asp?Pag=17">
+                            <p class="text-success textorodape"><span class="glyphicon glyphicon-envelope"
+                                    aria-hidden="true"></span>
+                                Fale Conosco</p>
+                        </a>
+                        <a href="default.asp?Pag=4">
+                            <p class="text-success textorodape"><span class="glyphicon glyphicon-th-list"
+                                    aria-hidden="true"></span>
+                                Cadastre-se</p>
+                        </a>
+                        <a href="default.asp?Pag=48">
+                            <p class="text-success textorodape"><span class="glyphicon glyphicon-bullhorn"
+                                    aria-hidden="true"></span>
+                                Anuncie</p>
+                        </a>
+                        <a href="default.asp?Pag=36">
+                            <p class="text-success textorodape"><span class="glyphicon glyphicon-search"
+                                    aria-hidden="true"></span>
+                                Busca Avançada</p>
+                        </a>
+                    </div>
+
+                    <div class="text-left">
+                        <img src="static/imagens/oie_transparent.png" border="0" width="200" height="200">&nbsp;
+                        <p><span class="glyphicon glyphicon-copyright-mark textorodape text-info" aria-hidden="true"><b>
+                                    2019</b>,</span>
+                            <a href="http://www.irradie.com.br" target="_blank"><span
+                                    class="text-success textorodape text-info"><b>NOME DA NOSSA
+                                        EMPRESA</b></span></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
